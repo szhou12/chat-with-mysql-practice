@@ -1,5 +1,6 @@
 # Chat With MySQL Database Using LangChain & OpenAI API
 *Disclaimer*: This is a practice project that follows the tutorial [Chat with MySQL Database with Python | LangChain Tutorial](https://www.youtube.com/watch?v=9ccl1_Wu24Q&t=1203s&ab_channel=AlejandroAO-Software%26Ai) made by Alejandro AO.
+[![Badge openai-api](https://badgen.net/badge/icon/openai-api?color=green&label)]()
 
 # Table of Contents
 * [Step 1: Create A MySQL Database](#step-1-create-a-mysql-database)
