@@ -1,6 +1,10 @@
 # Chat With MySQL Database Using LangChain & OpenAI API
+[![badge openai-api](https://badgen.net/badge/icon/openai-api?color=green&label)](https://openai.com/)
+[![badge langchain](https://badgen.net/badge/icon/langchain?color=yellow&label)](https://www.langchain.com/)
+[![badge mysql](https://badgen.net/badge/icon/mysql?color=blue&label)](https://www.mysql.com/)
+
 *Disclaimer*: This is a practice project that follows the tutorial [Chat with MySQL Database with Python | LangChain Tutorial](https://www.youtube.com/watch?v=9ccl1_Wu24Q&t=1203s&ab_channel=AlejandroAO-Software%26Ai) made by Alejandro AO.
-[![Badge openai-api](https://badgen.net/badge/icon/openai-api?color=green&label)]()
+
 
 # Table of Contents
 * [Step 1: Create A MySQL Database](#step-1-create-a-mysql-database)
@@ -101,3 +105,4 @@
 - [Chat with MySQL Database with Python | LangChain Tutorial](https://www.youtube.com/watch?v=9ccl1_Wu24Q&t=1203s&ab_channel=AlejandroAO-Software%26Ai)
 - [Chat With a MySQL Database Using Python and LangChain](https://alejandro-ao.com/chat-with-mysql-using-python-and-langchain/)
 - [lerocha/chinook-database](https://github.com/lerocha/chinook-database)
+- [Add Badges to GitHub | Shields IO](https://www.youtube.com/watch?v=uUalQbg-TGA&ab_channel=HariReddy)
