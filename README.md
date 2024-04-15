@@ -10,6 +10,7 @@
 * [Step 1: Create A MySQL Database](#step-1-create-a-mysql-database)
 * [Step 2: Create A Conda Virtual Environment](#step-2-create-a-conda-virtual-environment)
   * [Step 2.1: Install Python Packages Within Environment](#step-21-install-python-packages-within-environment)
+* [Step 3: Create SQL Chain Prompt](#step-3-create-sql-chain-prompt)
 
 ## Step 1: Create A MySQL Database
 0. Skip SQLite section. Step 1 is done in Terminal.
@@ -84,10 +85,10 @@
     - Uninstall a specific package from a Conda environment
     ```
     conda remove --name <env-name> <package-name>
-    connda remove <package-name>         // if you're currently activated within the environment
+    conda remove <package-name>         // if you're currently activated within the environment
     ```
 ### Step 2.1: Install Python Packages Within Environment
-1. Activate the environment `chat-with-mysql-practice` and within the enviroment, install two packages `langchain`, `mysql-connector-python`
+1. Activate the environment `chat-with-mysql-practice` and within the enviroment, install two packages: `langchain`, `mysql-connector-python`
     ```
     pip install langchain mysql-connector-python
     ```
@@ -99,7 +100,33 @@
     - `|`: Pipe operator. It takes the output on the left side and feeds it as input to the right side.
     - `grep langchain`: Regular expression matching. Find all packages containing the keyword `langchain`.
 
-
+## Step 3: Create SQL Chain Prompt
+1. Import the required class
+```
+from langchain_core.prompts import ChatPromptTemplate
+```
+- import the `ChatPromptTemplate` class from the `langchain_core.prompts` module.
+2. Define the template string
+```
+template = """
+XXX {schema} XXX
+"""
+```
+- `template`: prompt template that will be presented to the language model.
+- `{schema}`: placeholder. It will be replaced by the actual content specified in `.format(schema=...)`
+3. Create an instance of ChatPromptTemplate
+```
+prompt = ChatPromptTemplate.from_template(template) # deprecated
+prompt = ChatPromptTemplate.from_messages([template]) # recommended
+```
+- create an instance of `ChatPromptTemplate` using the predefined `template` string. 
+- Per documentation, `from_template` is deprecated. Recommend using `from_messages` instead.
+- Note: `from_messages` takes a list of strings as input. So put the `template` string in a list `[]`.
+4. Fill up placeholders
+```
+prompt.format(schema="my schema", question="how many users are there?")
+```
+- replace placeholders with actual content specified in args of `.format()`.
 
 ## Resources
 - [Chat with MySQL Database with Python | LangChain Tutorial](https://www.youtube.com/watch?v=9ccl1_Wu24Q&t=1203s&ab_channel=AlejandroAO-Software%26Ai)
