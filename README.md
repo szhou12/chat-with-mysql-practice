@@ -137,6 +137,7 @@
     - replace placeholders with actual content specified in args of `.format()`.
 
 ## Step 4: Load MySQL Database in Python
+![db_uri (1)](https://github.com/szhou12/chat-with-mysql-practice/assets/35708194/81376efc-5ead-4b0d-8cba-0bd6225f04f8)
 
 
 ## Resources
