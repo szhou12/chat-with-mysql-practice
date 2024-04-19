@@ -54,7 +54,15 @@
     +-------------------+
     SELECT * FROM artist LIMIT 10;
     ```
-5. Log out of MySQL.
+5. Check MySQL Port: (Helpful for Step 4)
+    ```
+    SHOW VARIABLES WHERE Variable_name = 'port';
+    ```
+    OR
+    ```
+    show variables like 'port';
+    ```
+6. Log out of MySQL.
     ```
     mysql> quit;
     ```
@@ -102,31 +110,34 @@
 
 ## Step 3: Create SQL Chain Prompt
 1. Import the required class
-```
-from langchain_core.prompts import ChatPromptTemplate
-```
-- import the `ChatPromptTemplate` class from the `langchain_core.prompts` module.
+    ```
+    from langchain_core.prompts import ChatPromptTemplate
+    ```
+    - import the `ChatPromptTemplate` class from the `langchain_core.prompts` module.
 2. Define the template string
-```
-template = """
-XXX {schema} XXX
-"""
-```
-- `template`: prompt template that will be presented to the language model.
-- `{schema}`: placeholder. It will be replaced by the actual content specified in `.format(schema=...)`
+    ```
+    template = """
+    XXX {schema} XXX
+    """
+    ```
+    - `template`: prompt template that will be presented to the language model.
+    - `{schema}`: placeholder. It will be replaced by the actual content specified in `.format(schema=...)`
 3. Create an instance of ChatPromptTemplate
-```
-prompt = ChatPromptTemplate.from_template(template) # deprecated
-prompt = ChatPromptTemplate.from_messages([template]) # recommended
-```
-- create an instance of `ChatPromptTemplate` using the predefined `template` string. 
-- Per documentation, `from_template` is deprecated. Recommend using `from_messages` instead.
-- Note: `from_messages` takes a list of strings as input. So put the `template` string in a list `[]`.
+    ```
+    prompt = ChatPromptTemplate.from_template(template) # deprecated
+    prompt = ChatPromptTemplate.from_messages([template]) # recommended
+    ```
+    - create an instance of `ChatPromptTemplate` using the predefined `template` string. 
+    - Per documentation, `from_template` is deprecated. Recommend using `from_messages` instead.
+    - Note: `from_messages` takes a list of strings as input. So put the `template` string in a list `[]`.
 4. Fill up placeholders
-```
-prompt.format(schema="my schema", question="how many users are there?")
-```
-- replace placeholders with actual content specified in args of `.format()`.
+    ```
+    prompt.format(schema="my schema", question="how many users are there?")
+    ```
+    - replace placeholders with actual content specified in args of `.format()`.
+
+## Step 4: Load MySQL Database in Python
+
 
 ## Resources
 - [Chat with MySQL Database with Python | LangChain Tutorial](https://www.youtube.com/watch?v=9ccl1_Wu24Q&t=1203s&ab_channel=AlejandroAO-Software%26Ai)
