@@ -159,6 +159,13 @@ langchain-openai
     pip install langchain-openai
     ```
 
+## Step 6: Create run_query Function And Final Prompt
+1. `run_query(query)`: takes in a SQL query in string format and executes in DB and returns the result in string.
+    - SQL query comes from SQL Chain module
+2. Create the full prompt for the full chain.
+
+## Step 7: Create Full Chain
+
 ## Resources
 - [Chat with MySQL Database with Python | LangChain Tutorial](https://www.youtube.com/watch?v=9ccl1_Wu24Q&t=1203s&ab_channel=AlejandroAO-Software%26Ai)
 - [Chat With a MySQL Database Using Python and LangChain](https://alejandro-ao.com/chat-with-mysql-using-python-and-langchain/)
