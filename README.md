@@ -7,10 +7,20 @@
 
 
 # Table of Contents
+* [Python Packages](#python-packages)
 * [Step 1: Create A MySQL Database](#step-1-create-a-mysql-database)
 * [Step 2: Create A Conda Virtual Environment](#step-2-create-a-conda-virtual-environment)
   * [Step 2.1: Install Python Packages Within Environment](#step-21-install-python-packages-within-environment)
 * [Step 3: Create SQL Chain Prompt](#step-3-create-sql-chain-prompt)
+* [Step 4: Load MySQL Database in Python](#step-4-load-mysql-database-in-python)
+* [Step 5: Create SQL Chain](#step-5-create-sql-chain)
+
+## Python Packages
+```
+langchain
+mysql-connector-python
+langchain-openai
+```
 
 ## Step 1: Create A MySQL Database
 0. Skip SQLite section. Step 1 is done in Terminal.
@@ -139,6 +149,15 @@
 ## Step 4: Load MySQL Database in Python
 ![db_uri (1)](https://github.com/szhou12/chat-with-mysql-practice/assets/35708194/81376efc-5ead-4b0d-8cba-0bd6225f04f8)
 
+## Step 5: Create SQL Chain
+1. SQL Chain is a module that 
+    1. takes in two entities: user question + database schema.
+    2. SQL Chain feeds two entities to LLM.
+    3. SQL Chain outputs corresponding SQL query.
+2. install `langchain-openai`
+    ```
+    pip install langchain-openai
+    ```
 
 ## Resources
 - [Chat with MySQL Database with Python | LangChain Tutorial](https://www.youtube.com/watch?v=9ccl1_Wu24Q&t=1203s&ab_channel=AlejandroAO-Software%26Ai)
